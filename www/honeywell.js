@@ -12,25 +12,26 @@ var feature = "Honeywell";
 var self = {};
 
 var actions = [
-    "onLog",
-    "onBarcodeEvent",
-    "onFailureEvent",
-    "onBarcodeDeviceConnectionEvent",
-    "barcodeReaderAim",
-    "barcodeReaderDecode",
-    "barcodeReaderGetAllDefaultProperties",
-    "barcodeReaderGetAllProperties",
-    "barcodeReaderGetInfo",
-    "barcodeReaderGetProfileNames",
-    "barcodeReaderGetProperties",
-    "barcodeReaderLight",
-    "barcodeReaderLoadProfile",
-    "barcodeReaderPressSoftwareTrigger",
-    "barcodeReaderSetProperties",
-    "closeBarcodeReader",
-    "createBarcodeReader",
-    "listBarcodeDevices",
-    "listConnectedBarcodeDevices"
+	"onLog",
+	"onBarcodeEvent",
+	"onFailureEvent",
+	"onBarcodeDeviceConnectionEvent",
+	"barcodeReaderAim",
+	"barcodeReaderDecode",
+	"barcodeReaderGetAllDefaultProperties",
+	"barcodeReaderGetAllProperties",
+	"barcodeReaderGetInfo",
+	"barcodeReaderGetProfileNames",
+	"barcodeReaderGetProperties",
+	"barcodeReaderLight",
+	"barcodeReaderLoadProfile",
+	"barcodeReaderPressSoftwareTrigger",
+	"barcodeReaderSetProperties",
+	"closeBarcodeReader",
+	"createBarcodeReader",
+	"createBTBarcodeReader",
+	"listBarcodeDevices",
+	"listConnectedBarcodeDevices"
 ];
 
 // connection event status codes
@@ -316,14 +317,14 @@ self.Properties = Object.freeze({
 	"VIDEO_REVERSE_ENABLED_BOTH": "both"
 });
 
-function createActionFunction (action) {
-    return function (success, error, args) {
-        cordova.exec(success, error, feature, action, [args || {}]);
-    }
+function createActionFunction(action) {
+	return function (success, error, args) {
+		cordova.exec(success, error, feature, action, [args || {}]);
+	}
 }
 
 actions.forEach(function (action) {
-    self[action] = createActionFunction(action);
+	self[action] = createActionFunction(action);
 });
 
 module.exports = self;

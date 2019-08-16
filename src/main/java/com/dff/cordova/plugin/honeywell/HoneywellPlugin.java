@@ -153,10 +153,13 @@ public class HoneywellPlugin extends CommonPlugin {
         } else if (ListConnectedBarcodeDevices.ACTION_NAME.equals(action)) {
             cordovaAction = new ListConnectedBarcodeDevices(action, args, callbackContext, this.cordova,
                     this.barcodeReaderManager, this.aidcManager, this.barcodeListener);
-        } else if (CreateBarcodeReader.ACTION_NAME.equals(action)) {
+		} else if (CreateBarcodeReader.ACTION_NAME.equals(action)) {
             cordovaAction = new CreateBarcodeReader(action, args, callbackContext, this.cordova,
                 this.barcodeReaderManager, this.aidcManager, this.barcodeListener);
-        } else if (CloseBarcodeReader.ACTION_NAME.equals(action)) {
+		} else if (CreateBTBarcodeReader.ACTION_NAME.equals(action)) {
+            cordovaAction = new CreateBTBarcodeReader(action, args, callbackContext, this.cordova,
+                this.barcodeReaderManager, this.aidcManager, this.barcodeListener);
+		} else if (CloseBarcodeReader.ACTION_NAME.equals(action)) {
             cordovaAction = new CloseBarcodeReader(action, args, callbackContext, this.cordova,
                 this.barcodeReaderManager, this.aidcManager, this.barcodeListener);
         } else if (BarcodeReaderGetProfileNames.ACTION_NAME.equals(action)) {

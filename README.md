@@ -7,7 +7,7 @@ Cordova plugin for Honeywell CT50 etc. devices.
 ## Installation
 
 ```sh
-cordova plugin add https://github.com/infinite-square/dff-cordova-plugin-honeywell.git`
+cordova plugin add https://github.com/infinite-square/dff-cordova-plugin-honeywell.git
 ```
 
 ## Documentation

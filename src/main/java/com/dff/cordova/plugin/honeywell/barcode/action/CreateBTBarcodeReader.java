@@ -66,7 +66,7 @@ public class CreateBTBarcodeReader extends HoneywellAction {
 
 								// if firendlyName isn't "internal" => get his name
 								String friendlyName = jsonArray.getJSONObject(i).getString("friendlyName");
-								if( friendlyName.toLowerCase().contains("internal")) {
+								if(!friendlyName.toLowerCase().contains("internal")) {
 									String BTName = jsonArray.getJSONObject(i).getString("name");
 									this.barcodeReaderManager.setInstance(this.aidcManager.createBarcodeReader(BTName));
 									isOneConnectedDeviceIsBT =  true;
